@@ -7,6 +7,7 @@ const nextConfig = {
       "image.tmdb.org",
       "upload.wikimedia.org",
       "occ-0-1190-2774.1.nflxso.net",
+      "rb.gy",
     ],
   },
 };

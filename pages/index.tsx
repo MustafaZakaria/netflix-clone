@@ -2,6 +2,7 @@ import Head from "next/head";
 import Banner from "../components/Banner";
 import Header from "../components/Header";
 import Row from "../components/Row";
+import useAuth from "../hooks/useAuth";
 import { Movie } from "../types";
 import requests from "../utils/request";
 
@@ -26,6 +27,20 @@ const Home: React.FC<HomeProps> = ({
   topRated,
   trendingNow,
 }) => {
+  const { loading } = useAuth();
+
+  if (loading)
+    return (
+      <div className="flex items-center justify-center">
+        <div
+          className="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full"
+          role="status"
+        >
+          <span className="visually-hidden"></span>
+        </div>
+      </div>
+    );
+
   return (
     <div className="relative h-screen bg-gradient-to-b lg:h-[140vh]">
       <Head>
